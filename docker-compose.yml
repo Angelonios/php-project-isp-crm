@@ -13,3 +13,17 @@ services:
             dockerfile: php-dockerfile
         volumes:
             - ./app:/app
+    mysql:
+        image: mariadb:latest
+        environment:
+            MYSQL_ROOT_PASSWORD: 'rootpassword'
+            MYSQL_USER: 'dbuser'
+            MYSQL_PASSWORD: 'dbpassword'
+            MYSQL_DATABASE: 'db'
+        volumes:
+            - mysqldata:/var/lib/mysql
+        ports:
+            - 3306:3306
+
+volumes:
+    mysqldata: {}
