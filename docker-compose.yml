@@ -9,4 +9,5 @@ services:
             - ./app:/app
     php:
         image: php:fpm
-        volumes: ./app:/app
+        volumes:
+            - ./app:/app
